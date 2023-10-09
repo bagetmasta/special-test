@@ -1,4 +1,150 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --tertiary-color: #ecf0f1;
+}
+
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--tertiary-color);
+  color: var(--secondary-color);
+}
+
+.header {
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo__image {
+  max-width: 100px;
+}
+
+.header__menu-toggle {
+  display: none;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.header__menu-toggle:hover {
+  background-color: var(--tertiary-color);
+  transform: scale(1.05);
+}
+
+.header__menu-toggle:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+.nav {
+  display: none;
+}
+
+.nav__list,
+.nav__submenu-item,
+.nav__submenu {
+  list-style: none;
+  padding: 0;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav__item {
+  padding: 15px;
+  position: relative;
+}
+
+.nav__link,
+.nav__submenu-link {
+  transition: color 0.3s;
+}
+
+.nav__link:hover,
+.nav__submenu-link:hover {
+  color: black;
+}
+
+.nav__submenu {
+  display: none;
+  background-color: white;
+  transition: box-shadow 0.3s;
+  min-width: 100%;
+  position: absolute;
+  left: 4px;
+  top: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.nav__submenu-item:not(:last-child) {
+  padding-bottom: 10px;
+}
+
+.nav__submenu-link {
+  padding: 10px;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .header__menu-toggle {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav {
+    display: block;
+  }
+
+  .nav__item:hover .nav__submenu {
+    display: block;
+  }
+}
+
+.accordion__item {
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.accordion__title {
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.accordion__title:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.accordion__title:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+.accordion__description {
+  display: none;
+  padding: 10px;
 }
