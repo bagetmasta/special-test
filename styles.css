@@ -12,6 +12,10 @@ body {
   color: var(--secondary-color);
 }
 
+.main {
+  padding: 10px;
+}
+
 .header {
   padding: 20px;
   background-color: var(--primary-color);
