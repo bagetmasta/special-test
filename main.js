@@ -6,6 +6,7 @@ function adjustNavDisplay() {
       toggleSubmenu();
     } else {
       $(".nav").css("display", "none");
+      $(".nav__submenu").hide();
     }
   });
 }
